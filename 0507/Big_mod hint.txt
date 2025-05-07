@@ -1,0 +1,43 @@
+利用二進位計算快速冪算法
+條件&公式
+初始化result = 1;
+while(exp > 0)
+{
+	if(exp % 2 == 1)
+	{
+		rssult = (result * base) % mod;
+	}
+	base = (base * base) % mod;
+	exp /= 2
+}
+
+範例:3 ^ 5 % 17
+--------------------------
+base exp mod     result
+3    5   17      1
+
+exp % 2 == 1 ->計入
+result = (1*3) %17 = 3
+base = (3*3)%17 = 9
+exp / 2 = 2
+--------------------------
+base exp mod     result
+9    2   17      3
+
+exp % 2 == 0 ->不計入
+base = (9*9)%17 = 13
+exp / 2 = 1
+--------------------------
+base exp mod     result
+13   1   17      3
+
+exp % 2 == 0->計入
+result = (3*13) % 17 = 5
+base = (13*13) = 169
+exp /2 = 0
+--------------------------
+base exp mod     result
+169  0   17      5
+exp ==0 -結束(return result)
+--------------------------
+Ans = result = 5
