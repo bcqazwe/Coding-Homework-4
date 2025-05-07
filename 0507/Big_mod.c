@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-long long mod_pow(long long base, long long exp, int mod) {
+long long mod_pow(long long base, long long exp, int mod) 
+{
     long long result = 1;
     base = base % mod;
     while (exp > 0) 
@@ -18,7 +19,8 @@ long long mod_pow(long long base, long long exp, int mod) {
 int main() {
     long long B, P;
     int M;
-    while (scanf("%lld%lld%d", &B, &P, &M) != EOF) {
+    while (scanf("%lld%lld%d", &B, &P, &M) != EOF) 
+    {
         long long R = mod_pow(B, P, M);
         printf("%lld\n", R);
     }
